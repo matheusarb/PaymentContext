@@ -1,20 +1,20 @@
+using PaymentContext.Domain.ValueObjects;
+
 namespace PaymentContext.Domain;
 
 public class Student
 {
     private IList<Subscription> _subscriptions = new List<Subscription>();
 
-    public Student(string firstName, string lastName, string document, string email)
+    public Student(Name name, Document document, string email)
     {
-        FirstName = firstName;
-        LastName = lastName;
+        Name = name;
         Document = document;
         Email = email;
     }
 
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public string Document { get; private set; }
+    public Name Name { get; set; }
+    public Document Document { get; private set; }
     public string Email { get; private set; }
     public string Address { get; private set; }
 

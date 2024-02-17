@@ -1,3 +1,4 @@
+using PaymentContext.Domain.ValueObjects;
 namespace PaymentContext.Domain;
 
 public abstract class Payment
@@ -7,7 +8,7 @@ public abstract class Payment
         DateTime expireDate, 
         decimal total, 
         decimal totalPaid, 
-        string document, 
+        Document document, 
         string owner, 
         string address)
     {
@@ -26,7 +27,7 @@ public abstract class Payment
     public DateTime ExpireDate { get; private set; }
     public decimal Total { get; private set; }
     public decimal TotalPaid { get; private set; }
-    public string Document { get; private set; }
+    public Document Document { get; private set; }
     public string Owner { get; private set; }
     public string Address { get; private set; }
 }

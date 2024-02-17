@@ -2,14 +2,14 @@ namespace PaymentContext.Domain;
 
 public abstract class Payment
 {
-    public string Number { get; set; }
-    public DateTime PaidDate { get; set; }
-    public DateTime ExpireDate { get; set; }
-    public decimal Total { get; set; }
-    public decimal TotalPaid { get; set; }
-    public string Document { get; set; }
-    public string Owner { get; set; }
-    public string Address { get; set; }
+    public string Number { get; private set; }
+    public DateTime PaidDate { get; private set; }
+    public DateTime ExpireDate { get; private set; }
+    public decimal Total { get; private set; }
+    public decimal TotalPaid { get; private set; }
+    public string Document { get; private set; }
+    public string Owner { get; private set; }
+    public string Address { get; private set; }
 }
 
 public class BoletoPayment : Payment

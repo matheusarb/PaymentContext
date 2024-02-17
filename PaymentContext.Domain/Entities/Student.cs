@@ -24,7 +24,7 @@ public class Student
     {
         //cancelar todas as assinaturas existentes e ativar a nova
         foreach (var sub in Subscriptions)
-            sub.IsActive = false;
+            sub.Inactivate();
 
         _subscriptions.Add(subscription);
     }

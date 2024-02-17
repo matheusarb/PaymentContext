@@ -13,7 +13,7 @@ public class PayPalPayment : Payment
         decimal totalPaid,
         Document document,
         string owner,
-        string address) : base(
+        Address address) : base(
              paidDate,
              expireDate,
              total,

@@ -15,7 +15,7 @@ public class BoletoPayment : Payment
         decimal totalPaid,
         ValueObjects.Document document,
         string owner,
-        string address) : base(
+        Address address) : base(
              paidDate,
              expireDate,
              total,

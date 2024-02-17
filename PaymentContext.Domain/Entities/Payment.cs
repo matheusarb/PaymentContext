@@ -10,7 +10,7 @@ public abstract class Payment
         decimal totalPaid, 
         Document document, 
         string owner, 
-        string address)
+        Address address)
     {
         Number = Guid.NewGuid().ToString().Replace("-","").Substring(0, 10).ToUpper();
         PaidDate = paidDate;
@@ -29,5 +29,5 @@ public abstract class Payment
     public decimal TotalPaid { get; private set; }
     public Document Document { get; private set; }
     public string Owner { get; private set; }
-    public string Address { get; private set; }
+    public Address Address { get; private set; }
 }

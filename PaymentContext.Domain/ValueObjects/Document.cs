@@ -13,4 +13,15 @@ public class Document : ValueObject
  
     public string Number { get; private set; }
     public EDocumentType Type { get; private set; }
+
+    public bool Validate()
+    {
+        if(Type == EDocumentType.CPF && Number.Length == 11)
+            return true;
+
+        if(Type == EDocumentType.CNPJ && Number.Length == 14)
+            return true;
+        
+        return false;
+    }
 }

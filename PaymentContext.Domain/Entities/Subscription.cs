@@ -16,7 +16,6 @@ public class Subscription
     public DateTime LastUpdateDate { get; private set; }
     public DateTime? ExpireDate { get; private set; }
     public bool IsActive { get; private set; }
-
     public IReadOnlyCollection<Payment> Payments { get { return _payments.ToArray(); } }
 
     public void AddPayment(Payment payment)

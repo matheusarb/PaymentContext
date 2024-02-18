@@ -1,3 +1,4 @@
+using System.Diagnostics.Contracts;
 using PaymentContext.Domain.ValueObjects;
 using PaymentContext.Shared.Entities;
 
@@ -25,6 +26,11 @@ public class Student : Entity
 
     public void AddSubscription(Subscription subscription)
     {
+        var hasSubscriptionActive = false;
+        foreach(var subs in _subscriptions)
+            if(subs.IsActive == true)
+                hasSubscriptionActive = true;
+
         //cancelar todas as assinaturas existentes e ativar a nova
         foreach (var sub in Subscriptions)
             sub.Inactivate();

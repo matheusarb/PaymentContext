@@ -21,7 +21,6 @@ public class Document : ValueObject
 
         if(Type == EDocumentType.CNPJ && Number.Length == 14)
             return true;
-        
         return false;
     }
 }

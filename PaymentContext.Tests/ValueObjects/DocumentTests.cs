@@ -1,4 +1,5 @@
 using PaymentContext.Domain;
+using PaymentContext.Domain.Enums;
 using PaymentContext.Domain.ValueObjects;
 
 namespace PaymentContext.Tests;
@@ -12,26 +13,30 @@ public class DocumentTests
     [TestMethod]
     public void ShouldReturnErrorWhenCNPJIsInvalid()
     {
-        Assert.Fail();
+        var doc = new Document("123", EDocumentType.CNPJ);
+        Assert.IsFalse(doc.Validate());
     }
     
     [TestMethod]
     public void ShouldReturnSuccessWhenCNPJIsValid()
     {
-        Assert.Fail();
+        var doc = new Document("75619017000120", EDocumentType.CNPJ);
+        Assert.IsTrue(doc.Validate());
     }
     
     //CPF Tests
     [TestMethod]
     public void ShouldReturnErrorWhenCPFIsInvalid()
     {
-        Assert.Fail();
+        var doc = new Document("123", EDocumentType.CPF);
+        Assert.IsFalse(doc.Validate());
     }
-    
+
     [TestMethod]
     public void ShouldReturnSuccessWhenCPFIsValid()
     {
-        Assert.Fail();
+        var doc = new Document("85765843522", EDocumentType.CPF);
+        Assert.IsTrue(doc.Validate());
     }
     
 

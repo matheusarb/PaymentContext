@@ -30,10 +30,11 @@ public class Student : Entity
         foreach(var subs in _subscriptions)
             if(subs.IsActive == true)
                 hasSubscriptionActive = true;
-
+        //
+        
         //cancelar todas as assinaturas existentes e ativar a nova
-        foreach (var sub in Subscriptions)
-            sub.Inactivate();
+        // foreach (var sub in _subscriptions)
+        //     sub.Inactivate();
 
         _subscriptions.Add(subscription);
     }

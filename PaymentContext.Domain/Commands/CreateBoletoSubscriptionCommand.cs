@@ -1,8 +1,9 @@
 using PaymentContext.Domain.Enums;
+using PaymentContext.Shared.Commands;
 
 namespace PaymentContext.Domain.Commands;
 
-public class CreateBoletoSubscriptionCommand
+public class CreateBoletoSubscriptionCommand : ICommand
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }

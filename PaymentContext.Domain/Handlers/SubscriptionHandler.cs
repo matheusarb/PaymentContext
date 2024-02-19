@@ -43,7 +43,7 @@ public class SubscriptionHandler : Notifiable<Notification>, IHandler<CreateBole
         string owner = "";
 
         // Gerar as Entidades
-        var student = new Student(name, document, email, address);
+        var student = new Student(name, document, email);
         var subscription = new Subscription(DateTime.Now.AddMonths(1));
         var payment = new BoletoPayment(
             command.BarCode, email, command.BoletoNumber,

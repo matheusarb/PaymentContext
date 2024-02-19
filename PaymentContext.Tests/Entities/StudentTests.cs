@@ -15,7 +15,7 @@ public class StudentTests
         var document = new Document("1234567876", EDocumentType.CPF);
         var email = new Email("bruce@email.com");
         var address = new Address("StreetName", "999", "TX", "USA");
-        _student = new Student(name, document, email, address);
+        _student = new Student(name, document, email);
         
         var payment = new PayPalPayment(new Email("mat@email.com"), "12345678", DateTime.Now, DateTime.Now, 100M, 100M, document, "batman", address);
         var subs = new Subscription(null);

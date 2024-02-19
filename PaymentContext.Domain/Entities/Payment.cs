@@ -9,7 +9,7 @@ public abstract class Payment
         decimal total, 
         decimal totalPaid, 
         Document document, 
-        string owner, 
+        string owner,
         Address address)
     {
         Number = Guid.NewGuid().ToString().Replace("-","").Substring(0, 10).ToUpper();

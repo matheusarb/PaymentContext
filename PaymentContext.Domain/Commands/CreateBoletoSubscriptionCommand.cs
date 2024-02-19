@@ -1,9 +1,11 @@
+using System.Diagnostics.Contracts;
+using Flunt.Notifications;
 using PaymentContext.Domain.Enums;
 using PaymentContext.Shared.Commands;
 
 namespace PaymentContext.Domain.Commands;
 
-public class CreateBoletoSubscriptionCommand : ICommand
+public class CreateBoletoSubscriptionCommand : Notifiable<Notification>, ICommand
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -31,5 +33,8 @@ public class CreateBoletoSubscriptionCommand : ICommand
     public string Country { get; set; }
     public string ZipCode { get; set; }
 
-    
+    public void Validate()
+    {
+        // AddNotifications(new Contract());
+    }
 }

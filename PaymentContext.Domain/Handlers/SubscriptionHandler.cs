@@ -1,5 +1,3 @@
-
-
 using Flunt.Notifications;
 using PaymentContext.Domain.Commands;
 using PaymentContext.Shared.Commands;
@@ -13,6 +11,11 @@ public class SubscriptionHandler :
 {
     public ICommandResult Handle(CreateBoletoSubscriptionCommand command)
     {
+        // Fail Fast Validate
+        command.Validate();
+        if(!command.IsValid)
+            return new CommandResult(false, "não foi possível realizar a assinatura");
+
         // Verificar se o Documento já está cadastrado
 
 

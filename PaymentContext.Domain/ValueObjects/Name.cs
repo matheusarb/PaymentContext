@@ -14,8 +14,5 @@ public class Name : ValueObject
     }
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
-    public override string ToString()
-    {
-        return $"{FirstName} {LastName}";
-    }
+    public string FullName { get { return $"{FirstName} {LastName}"; } }
 }

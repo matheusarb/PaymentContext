@@ -53,7 +53,7 @@ public class SubscriptionHandler : Notifiable<Notification>, IHandler<CreateBole
             owner,
             address);
 
-        // Relacionamentos
+        // Adicionar Relacionamentos
         subscription.AddPayment(payment);
         student.AddSubscription(subscription);
 
@@ -64,7 +64,7 @@ public class SubscriptionHandler : Notifiable<Notification>, IHandler<CreateBole
         _repository.CreateSubscription(student);
 
         // Enviar e-mail de boas vindas
-        _emailService.GreetingsMail(student.Name.ToString(), )
+        _emailService.GreetingsMail(student.Name.FullName, student.Email.Address, "Welcome", "Sua assinatura foi criada");
 
         // Retornar info
         return new CommandResult(true, "Assinatura realizada com sucesso");
